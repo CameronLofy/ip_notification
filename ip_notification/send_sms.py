@@ -8,6 +8,6 @@ client = Client("Insert Account SID Here", "insert Auth Token Here")
 # to the phone number you signed up for Twilio with, or upgrade your
 # account to send SMS to any phone number
 def send_txt(name):
-    client.messages.create(to="+1XXXXXXXXXX",
+    client.messages.create(to="+12094798832",
                            from_="+1XXXXXXXXXX",
                            body= name + "is online")
