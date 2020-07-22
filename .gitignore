@@ -1,5 +1,6 @@
-config.py
-send_sms.py
+
+# Sepcific Files
+ip_notification/config.py
 
 
 # Byte-compiled / optimized / DLL files
