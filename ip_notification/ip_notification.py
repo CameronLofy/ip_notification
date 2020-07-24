@@ -15,19 +15,22 @@ for ip in hostnames:
 while True:
 
     # Looing through list of IPs to check
+    # TODO: Speed up ping commmand search time
     for ip in hostnames:
-        output = subprocess.Popen(["ping", ip],stdout = subprocess.PIPE).communicate()[0]
+        output = subprocess.Popen(["ping", "-n", "1", ip],stdout = subprocess.PIPE).communicate()[0]
         str_output = str(output, 'utf-8')
 
         # If IP is offline, the output will have "Destinatino host unreachable"
-        if ("Destination host unreachable" in str_output):
+        if ("timed out" in str_output) or ("Destination host unreachable" in str_output):
             if notified[ip] == True:
                 print(hostnames[ip]," is offline")
             notified[ip] = False
 
+        #elif("Reply from {ip}" in str_output):
         else:
             if notified[ip] == False:
                 # Using the send_sms function in send_sms.py
                 send_txt(hostnames[ip])
                 print(hostnames[ip]," is online")
             notified[ip] = True
+
