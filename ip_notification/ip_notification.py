@@ -20,7 +20,7 @@ while True:
         output = subprocess.Popen(["ping", "-n", "1", ip],stdout = subprocess.PIPE).communicate()[0]
         str_output = str(output, 'utf-8')
 
-        # If IP is offline, the output will have "Destinatino host unreachable"
+        # If IP is offline, the output will have "Destination host unreachable"
         if ("timed out" in str_output) or ("Destination host unreachable" in str_output):
             if notified[ip] == True:
                 print(hostnames[ip]," is offline")
