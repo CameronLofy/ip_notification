@@ -57,7 +57,7 @@ while True:
                 print(f"Time since offline for {hostnames[ip]}: {time_delta}")
                 time_diff = time_delta.total_seconds()/60
                 print(hostnames[ip],' is online')
-                if(time_diff >= 10):
+                if(time_diff >= 60 and datetime.datetime.now().hour >= 9):
                     send_txt(hostnames[ip])
                     print("text sent!")
                
