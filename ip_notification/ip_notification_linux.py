@@ -65,4 +65,3 @@ while True:
                     print("notification sent!")
                 
             notified[ip] = True
-
