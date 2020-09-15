@@ -12,8 +12,8 @@ client = Client(twilio_account, twilio_auth)
 # config.py
 # Place IP addresses here in this format
 ip_list = {"192.168.86.22":"Cameron's Phone",
-		   "192.168.86.2":"Jon's Phone",
-		   "192.168.86.3":"Cynthia's Phone"}
+           "192.168.86.2":"Jon's Phone",
+           "192.168.86.3":"Cynthia's Phone"}
 
 
 twilio_account = "ACxxxxxxxxxxxxxxxxx"
@@ -30,7 +30,11 @@ user_num = "+1XXXXXXXXXX"
 def send_txt(name):
     client.messages.create(to=twilio_num,
                            from_=user_num,
-                           body= name + "is online")
+                           body= name + " is online")
+def send_startup_txt():
+    client.messages.create(to=twilio_num,
+                           from_=user_num,
+                           body= "IP checker notification has started")
 
 
 
