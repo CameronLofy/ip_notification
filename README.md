@@ -1,8 +1,8 @@
 # ip_notification
-Automated python bot to send text to me when certain IP's are connected to internet
+Automated python bot to send text or push notification through Pushover when certain IP's are connected to home wifi.
 
 
-To use, download files and add a file in the same directory as *ip_notification.py*. Rename the new file to **config.py** (Contents of config.py are expalined in send_sms.py)
+To use, download files and add a file in the same directory as *ip_notification.py* and rename the new file to **config.py** containing your own *ip_list*, *twilio_account*, *twilio_auth*, *twilio_num*, and *user_num* (the number to send the text to)
 
 **Example is shown below:**
 
